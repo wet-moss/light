@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Light</title>
+</head>
+<body>
+    <header class="header">
+        <a class="header__logo" href="/">
+            <img class="header__logo-img" src="./icons/logo.png" alt="Light logo" />
+        </a>
+
+        <form class="header__search" action="/search" method="get">
+            <input
+                    type="search"
+                    name="q"
+                    class="header__search-input"
+                    placeholder="Поиск по товарам..."
+                    aria-label="Поиск"
+            />
+        </form>
+
+        <div class="header__info">
+            <ul class="header__info-list">
+                <li class="header__info-item">Москва</li>
+                <li class="header__info-item">+7 (495) 128-11-38</li>
+                <li class="header__info-item">Ежедневно с 9:00 до 22:00</li>
+            </ul>
+        </div>
+
+        <div class="header__actions">
+            <div class="header__cart">
+                <span class="header__cart-price">26 546 ₽</span>
+                <div class="header__cart-icon">
+                    <img class="header__cart-icon-img" src="" alt="" />
+                    <span class="header__cart-count">4</span>
+                </div>
+            </div>
+            <button class="header__tool" type="button"></button>
+            <button class="header__tool" type="button"></button>
+            <button class="header__tool" type="button"></button>
+        </div>
+    </header>
+
+    <div class="line-menu">
+        <div class="line-menu__product-info">
+            <button class="line-menu__catalog-button" type="button">
+                Каталог Товаров
+            </button>
+            <a class="line-menu__link" href="/">
+                Бренды +
+            </a>
+            <a class="line-menu__link" href="/">
+                Стили +
+            </a>
+        </div>
+        <div class="line-menu__company-info">
+            <a class="line-menu__info-link is-current" href="/">
+                О компании
+            </a>
+            <a class="line-menu__info-link" href="/">
+                Гарантия/возврат
+            </a>
+            <a class="line-menu__info-link" href="/">
+                Доставки/оплата
+            </a>
+            <a class="line-menu__info-link" href="/">
+                Отзывы
+            </a>
+            <a class="line-menu__info-link" href="/">
+                Контакты
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
