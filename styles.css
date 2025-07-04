@@ -245,12 +245,14 @@ svg * {
     --color-black: #000000;
     --color-gray: #f3f3f3;
     --color-dark-gray: #3b3b3b;
+    --color-green: #00b912;
+    --color-orange: #fd5e00;
 
     --font-family-base: 'Montserrat', sans-serif;
 
     --border-radius: 10px;
 
-    --container-width: 1300px;
+    --container-width: 1460px;
     --transition-duration: 0.2s;
 }
 
@@ -283,11 +285,26 @@ a:hover{
 /*верхний хэдер*/
 .header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     column-gap: 20px;
-    padding: 35px 250px;
     background-color: var(--color-white);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: 20px;
+    width: 100%;
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-block: 35px;
 }
 
 .header__search {
@@ -297,30 +314,36 @@ a:hover{
     border-radius: 30px;
     overflow: hidden;
     flex-grow: 1;
-    max-width: 280px;
+    max-width: 250px;
+    height: 30px;
     margin-inline: 30px;
 }
 
+.header__search-button {
+    background: transparent url('./icons/search-icon.svg') no-repeat center center / 20px 20px;
+    width: 36px;
+    aspect-ratio: 1;
+    border: none;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
 .header__search-input {
-    padding-inline: 10px;
-    padding-block: 5px;
+    padding: 8px 10px;
     border: none;
     outline: none;
     width: 100%;
-    background-image: url('./icons/search.png');
-    background-repeat: no-repeat;
-    background-size: 16px 16px;
-    background-position: 14px center;
 }
 
-.header__search-input:focus {
-    background-image: none;
+.header__info {
+    flex-grow: 1;
 }
 
 .header__info-list {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 80px;
+    gap: 20px;
     font-size: 18px;
 }
 
@@ -360,12 +383,6 @@ a:hover{
     height: 20px;
 }
 
-/*.header__cart-icon-img {*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    object-fit: contain;*/
-/*}*/
-
 .header__cart-count {
     color: var(--color-black);
     position: absolute;
@@ -389,8 +406,8 @@ a:hover{
 .info-item__time::before {
     content: '';
     display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-bottom: 3px;
     background-size: contain;
     background-repeat: no-repeat;
     vertical-align: middle;
@@ -398,18 +415,18 @@ a:hover{
 }
 
 .info-item__city::before {
-    background-image: url('./icons/location.png');
-    width: 27px;
+    background-image: url('./icons/location-icon.svg');
+    width: 30px;
 }
 
 .info-item__phone::before {
-    background-image: url('./icons/phone.png');
-    width: 22px;
+    background-image: url('./icons/phone-icon.svg');
+    width: 30px;
 }
 
 .info-item__time::before {
-    background-image: url('./icons/clock.png');
-    width: 24px;
+    background-image: url('./icons/clock-icon.svg');
+    width: 30px;
 }
 
 .info-item__city {
@@ -420,21 +437,24 @@ a:hover{
 /*нижний хэдер*/
 .line-menu {
     background-color: var(--color-yellow);
+    width: 100%;
+}
+
+.line-menu > .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 250px;
+    padding-block: 15px;
     font-size: 14px;
     text-transform: uppercase;
 }
 
-.line-menu__product-info {
+.line-menu__list {
     display: flex;
     align-items: center;
     gap: 20px;
     font-weight: 500;
 }
-
 .line-menu__catalog-button {
     display: inline-flex;
     align-items: center;
@@ -468,4 +488,141 @@ a:hover{
     font-weight: 400;
     text-decoration: underline;
     text-underline-offset: 5px;
+}
+
+/* БАННЕРЫ */
+
+.promo-banners {
+    padding: 65px 0;
+}
+
+.promo-banners__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+.promo-banners__item {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    word-break: break-word;
+}
+
+.promo-banners__item--big {
+    color: var(--color-white);
+    grid-row: span 2;
+    background-image: url('./images/big-banner.png');
+    width: 890px;
+    height: 390px;
+
+}
+
+.promo-banners__item--brand {
+    color: var(--color-black);
+    background-image: url('./images/brand-banner.png');
+    width: 550px;
+    height: 190px;
+}
+
+.promo-banners__item--promotion {
+    color: var(--color-white);
+    background-image: url('./images/promotion-banner.png');
+    width: 550px;
+    height: 180px;
+}
+
+.promo-banners__title {
+    position: absolute;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.promo-banners__title--big{
+    font-size: 70px;
+    line-height: 0.8;
+    margin-left: 455px;
+    margin-top: 80px;
+    max-width: 330px;
+}
+
+.promo-banners__tag {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    background-color: var(--color-green);
+    text-transform: uppercase;
+    color: var(--color-white);
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+    padding: 40px 5px 5px;
+    width: 105px;
+    height: 95px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 25%);
+    line-height: 1.2;
+}
+
+.promo-banners__tag--little {
+    font-size: 10px;
+}
+
+.promo-banners__tag--big {
+    font-size: 26px;
+}
+
+.promo-banners__button--big {
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform:  uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 494px;
+    margin-top: 255px;
+}
+
+.promo-banners__link {
+    position: absolute;
+    color: var(--color-orange);
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.promo-banners__link--brand {
+    margin-top: 160px;
+    margin-left: 20px;
+}
+
+.promo-banners__title--brand {
+    margin-top: 20px;
+    margin-left: 25px;
+    font-size: 30px;
+    max-width: 200px;
+    line-height: 1;
+}
+
+.promo-banners__title--promotions {
+    position: absolute;
+    margin-top: 42px;
+    margin-left: 375px;
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+.promo-banners__text {
+    position: absolute;
+    margin-top: 105px;
+    margin-left: 380px;
+    max-width: 150px;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: right;
+}
+
+.promo-banners__link-promotion {
+    margin-top: 150px;
+    margin-left: 450px;
 }

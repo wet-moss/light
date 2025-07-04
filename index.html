@@ -10,94 +10,144 @@
 </head>
 <body>
     <header class="header">
-        <a class="header__logo" href="/">
-            <img
-                    class="header__logo-img"
-                    src="./icons/logo.png"
-                    alt="Light logo"
-                    width="155"
-                    height="55"
-                    loading="lazy"
-            />
-        </a>
+        <div class="container">
+            <div class="header__top">
+                <a class="header__logo" href="/">
+                    <img
+                            class="header__logo-img"
+                            src="./icons/logo.png"
+                            alt="Light logo"
+                            width="152"
+                            height="65"
+                            loading="lazy"
+                    />
+                </a>
 
-        <form class="header__search" action="/search" method="get">
-            <input
-                    type="search"
-                    name="q"
-                    class="header__search-input"
-                    aria-label="Поиск"
-            />
-        </form>
+                <form class="header__search" action="/search" method="get">
+                    <button class="header__search-button" type="submit" aria-label="Поиск"></button>
+                    <input
+                            type="search"
+                            name="q"
+                            class="header__search-input"
+                    />
+                </form>
 
-        <div class="header__info">
-            <ul class="header__info-list">
-                <li class="header__info-item info-item__city">Москва</li>
-                <li class="header__info-item info-item__phone">+7 (495) 128-11-38</li>
-                <li class="header__info-item info-item__time">Ежедневно с 9:00 до 22:00</li>
-            </ul>
-        </div>
-
-        <div class="header__actions">
-            <a class="header__cart" href="/">
-                <span class="header__cart-price">26 546 ₽</span>
-                <div class="header__cart-icon">
-                    <img class="header__cart-icon-img" src="./icons/cart.png" alt="корзина" />
-                    <span class="header__cart-count">4</span>
+                <div class="header__info">
+                    <ul class="header__info-list">
+                        <li class="header__info-item info-item__city">Москва</li>
+                        <li class="header__info-item info-item__phone">+7 (495) 128-11-38</li>
+                        <li class="header__info-item info-item__time">Ежедневно с 9:00 до 22:00</li>
+                    </ul>
                 </div>
-            </a>
-            <button class="header__tool-profile" type="button"></button>
-            <a class="header__tool-icons" href="/">
-                <img
-                        src="./icons/graph.png"
-                        alt="Graph"
-                        width="24"
-                        height="19"
-                        loading="lazy"
-                />
-            </a>
-            <a class="header__tool-icons" href="/">
-                <img
-                        src="./icons/heart.png"
-                        alt="Heart"
-                        width="22"
-                        height="18"
-                        loading="lazy"
-                />
-            </a>
+
+                <div class="header__actions">
+                    <a class="header__cart" href="/">
+                        <span class="header__cart-price">26 546 ₽</span>
+                        <div class="header__cart-icon">
+                            <img class="header__cart-icon-img" src="./icons/cart.png" alt="корзина" />
+                            <span class="header__cart-count">4</span>
+                        </div>
+                    </a>
+                    <button class="header__tool-profile" type="button"></button>
+                    <a class="header__tool-icons" href="/">
+                        <img
+                                src="./icons/graph-icon.svg"
+                                alt="Graph"
+                                width="24"
+                                height="19"
+                                loading="lazy"
+                        />
+                    </a>
+                    <a class="header__tool-icons" href="/">
+                        <img
+                                src="./icons/heart-icon.svg"
+                                alt="Heart"
+                                width="22"
+                                height="18"
+                                loading="lazy"
+                        />
+                    </a>
+                </div>
+            </div>
         </div>
+            <div class="line-menu">
+                <div class="container">
+                <nav class="line-menu__product-info">
+                    <ul class="line-menu__list">
+                        <li>
+                            <button class="line-menu__catalog-button" type="button">
+                                Каталог Товаров
+                            </button>
+                        </li>
+                        <li>
+                            <a class="line-menu__link" href="/">
+                                Бренды +
+                            </a>
+                        </li>
+                        <li>
+                            <a class="line-menu__link" href="/">
+                                Стили +
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="line-menu__company-info">
+                    <a class="line-menu__info-link is-current" href="/">
+                        О компании
+                    </a>
+                    <a class="line-menu__info-link" href="/">
+                        Гарантия/возврат
+                    </a>
+                    <a class="line-menu__info-link" href="/">
+                        Доставки/оплата
+                    </a>
+                    <a class="line-menu__info-link" href="/">
+                        Отзывы
+                    </a>
+                    <a class="line-menu__info-link" href="/">
+                        Контакты
+                    </a>
+                </div>
+
+            </div>
+            </div>
     </header>
+<body>
+    <section class="promo-banners">
+        <div class="container">
+            <div class="promo-banners__grid">
+                <div class="promo-banners__item promo-banners__item--big">
+                    <div class="promo-banners__content">
+                        <h2 class="promo-banners__title promo-banners__title--big">Распродажа</h2>
+                        <a href="#" class="promo-banners__button--big">Перейти к товарам</a>
+                        <div class="promo-banners__tag">
+                            Скидки
+                            <span class="promo-banners__tag--little">до</span>
+                            <span class="promo-banners__tag--big">60%</span>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="line-menu">
-        <div class="line-menu__product-info">
-            <button class="line-menu__catalog-button" type="button">
-                Каталог Товаров
-            </button>
-            <a class="line-menu__link" href="/">
-                Бренды +
-            </a>
-            <a class="line-menu__link" href="/">
-                Стили +
-            </a>
-        </div>
-        <div class="line-menu__company-info">
-            <a class="line-menu__info-link is-current" href="/">
-                О компании
-            </a>
-            <a class="line-menu__info-link" href="/">
-                Гарантия/возврат
-            </a>
-            <a class="line-menu__info-link" href="/">
-                Доставки/оплата
-            </a>
-            <a class="line-menu__info-link" href="/">
-                Отзывы
-            </a>
-            <a class="line-menu__info-link" href="/">
-                Контакты
-            </a>
-        </div>
+                <div class="promo-banners__item promo-banners__item--brand">
+                    <div class="promo-banners__content">
+                        <h2 class="promo-banners__title promo-banners__title--brand">С нами будет светло</h2>
+                        <a href="#" class="promo-banners__link promo-banners__link--brand">Подробнее</a>
+                    </div>
+                </div>
 
-    </div>
+                <div class="promo-banners__item promo-banners__item--promotion">
+                    <div class="promo-banners__content">
+                        <h2 class="promo-banners__title promo-banners__title--promotions">Акция</h2>
+                        <p class="promo-banners__text">Лампочка для люстр в подарок</p>
+                        <a href="#" class="promo-banners__link promo-banners__link-promotion">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+
 </body>
 </html>
