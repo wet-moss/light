@@ -253,7 +253,7 @@ svg * {
     --border-radius: 10px;
 
     --container-width: 1460px;
-    --transition-duration: 0.2s;
+    --transition-duration: 0.3s;
 }
 
 body {
@@ -280,6 +280,19 @@ a{
 
 a:hover{
     color: var(--color-dark-gray);
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px  !important;
+    height: 1px !important;
+    margin: -1px  !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
 }
 
 /*верхний хэдер*/
@@ -511,6 +524,13 @@ a:hover{
     word-break: break-word;
 }
 
+/*.promo-banners__item:hover{*/
+/*    transition: transform var(--transition-duration) ease;*/
+/*    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);*/
+/*    !*transform: translateY(-1px);*!*/
+/*}*/
+
+
 .promo-banners__item--big {
     color: var(--color-white);
     grid-row: span 2;
@@ -625,4 +645,96 @@ a:hover{
 .promo-banners__link-promotion {
     margin-top: 150px;
     margin-left: 450px;
+}
+
+/*КАТЕГОРИИ*/
+
+.categories {
+    text-align: center;
+}
+
+.categories__title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    font-family: var(--font-family-base), sans-serif;
+    color: var(--color-black);
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.categories__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-card__link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.category-card__link:hover {
+    transition: transform var(--transition-duration) ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-4px);
+}
+
+.category-card__image {
+    width: 343px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+}
+
+.category-card__name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    color: var(--color-black);
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.categories__title::before,
+.categories__title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: currentColor;
+    opacity: 0.4;
+}
+
+.category-card__name::before,
+.category-card__name::after {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 1.5px;
+    background-color: currentColor;
+}
+
+.category-card__name--two-lines{
+    gap: 0 !important;
+    padding: 18px 10px !important;
 }
