@@ -53,5 +53,6 @@ function movePrev() {
     }, { once: true });
 }
 
+
 btnNext.addEventListener('click', moveNext);
 btnPrev.addEventListener('click', movePrev);
