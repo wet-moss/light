@@ -466,6 +466,11 @@ a:hover{
 .info-item__city {
     text-decoration: underline;
     text-underline-offset: 3px;
+    border: none;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: start;
+    padding: 10px;
 }
 
 /*нижний хэдер*/
