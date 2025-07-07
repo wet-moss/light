@@ -8,8 +8,10 @@ let isMoving = false;
 const maxVisibleSlides = 4;
 const slides = track.children;
 
+let disable = false;
+
 function updateArrowState() {
-    const disable = slides.length <= maxVisibleSlides;
+    disable = slides.length <= maxVisibleSlides;
     btnPrev.classList.toggle('slider__arrow--disabled', disable);
     btnNext.classList.toggle('slider__arrow--disabled', disable);
 }
@@ -17,7 +19,7 @@ function updateArrowState() {
 updateArrowState();
 
 function moveNext() {
-    if (isMoving || btnNext.classList.contains('slider__arrow--disabled')) return;
+    if (isMoving || disable) return;
     isMoving = true;
 
     track.style.transition = 'transform 0.4s ease';
@@ -34,7 +36,7 @@ function moveNext() {
 }
 
 function movePrev() {
-    if (isMoving || btnPrev.classList.contains('slider__arrow--disabled')) return;
+    if (isMoving || disable) return;
     isMoving = true;
 
     track.style.transition = 'none';
